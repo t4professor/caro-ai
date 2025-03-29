@@ -62,4 +62,5 @@ npm run lint
 
 ## License
 
-MIT License
+Proprietary - All rights reserved.
+See [LICENSE](LICENSE) file for details.
