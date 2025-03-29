@@ -1,16 +1,44 @@
 :root {
+  /* Light theme variables */
+  --bg-color: #f5f7fa;
+  --text-color: #2c3e50;
+  --component-bg: white;
+  --border-color: #e2e8f0;
+  --hover-bg: #f8fafc;
+  --button-bg: #3498db;
+  --button-hover: #2980b9;
+  --winner-color: #27ae60;
+  --winner-bg: #e8f6f3;
+  --winner-pulse: #d1f2eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='dark'] {
+  /* Dark theme variables */
+  --bg-color: #1a1c2e;
+  --text-color: #ffffff;
+  --component-bg: #2d3348;
+  --border-color: #4a5568;
+  --hover-bg: #3a4158;
+  --button-bg: #4299e1;
+  --button-hover: #3182ce;
+  --winner-color: #68d391;
+  --winner-bg: #276749;
+  --winner-pulse: #2f855a;
+  --shadow-color: rgba(0, 0, 0, 0.4);
 }
 
 a {
@@ -28,6 +56,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 h1 {
@@ -37,18 +67,22 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--border-color);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--component-bg);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
+  color: var(--text-color);
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: var(--button-bg);
+  background-color: var(--hover-bg);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

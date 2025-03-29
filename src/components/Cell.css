@@ -1,0 +1,61 @@
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  margin: -1px 0 0 -1px;
+  padding: 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 40px;
+  background: var(--component-bg);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-color);
+}
+
+.cell:hover:not(:disabled) {
+  background: var(--hover-bg);
+  border-color: var(--button-bg);
+  z-index: 1;
+  position: relative;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+  background: var(--component-bg);
+  opacity: 0.8;
+}
+
+.cell-filled {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.cell-empty:not(:disabled):hover {
+  background: #f1f5f9;
+}
+
+@keyframes winPulse {
+  0% {
+    box-shadow: 0 0 0 1px var(--winner-color);
+    background: var(--winner-bg);
+  }
+  50% {
+    box-shadow: 0 0 0 2px var(--winner-color);
+    background: var(--winner-pulse);
+  }
+  100% {
+    box-shadow: 0 0 0 1px var(--winner-color);
+    background: var(--winner-bg);
+  }
+}
+
+.cell-winner {
+  animation: winPulse 1.5s ease-in-out infinite;
+  color: var(--winner-color);
+  text-shadow: 0 0 8px var(--winner-color);
+  position: relative;
+  border-color: transparent !important;
+  z-index: 1;
+}
