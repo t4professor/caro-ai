@@ -181,6 +181,7 @@ const Game = () => {
         board={gameState.board} 
         onCellClick={handleCellClick} 
         winningCells={gameState.winningCells}
+        currentPlayer={gameState.currentPlayer}
       />
     </div>
   );

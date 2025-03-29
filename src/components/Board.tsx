@@ -1,4 +1,4 @@
-import { CellValue } from '../types/game';
+import { CellValue, Player } from '../types/game';
 import Cell from './Cell';
 import './Board.css';
 
@@ -6,9 +6,10 @@ interface BoardProps {
   board: CellValue[][];
   onCellClick: (row: number, col: number) => void;
   winningCells: [number, number][] | null;
+  currentPlayer: Player;
 }
 
-const Board = ({ board, onCellClick, winningCells }: BoardProps) => {
+const Board = ({ board, onCellClick, winningCells, currentPlayer }: BoardProps) => {
   const isWinningCell = (row: number, col: number): boolean => {
     return !!winningCells?.some(([r, c]) => r === row && c === col);
   };
@@ -23,6 +24,7 @@ const Board = ({ board, onCellClick, winningCells }: BoardProps) => {
               value={cell}
               onClick={() => onCellClick(rowIndex, colIndex)}
               isWinner={isWinningCell(rowIndex, colIndex)}
+              currentPlayer={currentPlayer}
             />
           ))}
         </div>
